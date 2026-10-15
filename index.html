@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>المسار المغلق والمسار المفتوح - الأستاذ كحول داود</title>
+<script>var TK="th_poles";try{document.documentElement.setAttribute("data-theme",localStorage.getItem(TK)==="dark"?"dark":"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}</script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e8f7f9;--card:#fff;--ink:#17323a;--mut:#58737b;--line:#c9e4e8;--pri:#0e7c8f;--pribg:#d6f0f4;--acc:#ff7a2f;--accd:#c85a14;--ok:#0b7a43;--okbg:#d8f6e4;--bad:#b3261e;--badbg:#fde4e1;--note:#fff1b8;--noteink:#5a4300;--hero:#0e8a9c;--pink:#fde1f0;--pinkink:#9d174d;--vio:#e9e2ff;--vioink:#5b21b6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1d22;--card:#122d34;--ink:#e6f6f9;--mut:#9cc0c8;--line:#244a54;--pri:#6fd6e8;--pribg:#1b4651;--acc:#ff9a55;--accd:#b8560f;--ok:#78e5ae;--okbg:#12402c;--bad:#ff9f96;--badbg:#44201d;--note:#4a3a0c;--noteink:#ffe9a3;--hero:#0b5f6d;--pink:#4a1f38;--pinkink:#ffb3d9;--vio:#32286b;--vioink:#cdbfff}}
+:root[data-theme="dark"]{--bg:#0b1d22;--card:#122d34;--ink:#e6f6f9;--mut:#9cc0c8;--line:#244a54;--pri:#6fd6e8;--pribg:#1b4651;--acc:#ff9a55;--accd:#b8560f;--ok:#78e5ae;--okbg:#12402c;--bad:#ff9f96;--badbg:#44201d;--note:#4a3a0c;--noteink:#ffe9a3;--hero:#0b5f6d;--pink:#4a1f38;--pinkink:#ffb3d9;--vio:#32286b;--vioink:#cdbfff}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,Tahoma,"Segoe UI",sans-serif;line-height:1.9;font-size:16px}
+.m{direction:ltr;unicode-bidi:isolate;white-space:nowrap;display:inline-block;font-weight:600}
+.hero{background:var(--hero);color:#fff;padding:20px 16px 56px;border-radius:0 0 28px 28px;text-align:center}
+.hero h1{font-size:25px;font-weight:800;margin:6px 0 2px;line-height:1.5}
+.hero .lvl{display:inline-block;background:rgba(255,255,255,.2);border-radius:99px;padding:0 14px;font-size:13px}
+.hero .by{font-size:14px}.hero .by b{background:#ffd23f;color:#3b2d00;border-radius:8px;padding:0 10px;margin-right:4px}
+.w{max-width:680px;margin:-38px auto 0;padding:0 14px 40px}
+nav{display:flex;justify-content:space-between;background:var(--card);border-radius:20px;padding:10px 12px;margin-bottom:12px;border:2px solid var(--line)}
+nav button{width:38px;height:38px;border-radius:50%;border:2px solid var(--line);background:var(--card);color:var(--mut);font:inherit;font-weight:800;cursor:pointer;padding:0;line-height:1}
+nav button.on{background:var(--acc);border-color:var(--acc);color:#fff;transform:scale(1.12)}
+nav button.done{background:var(--ok);border-color:var(--ok);color:var(--card)}
+.card{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:18px 16px;margin-bottom:12px}
+h2{font-size:20px;margin:0 0 8px;font-weight:800;display:flex;align-items:center;gap:10px}
+h2 i{font-style:normal;width:40px;height:40px;border-radius:12px;background:var(--pribg);display:inline-flex;align-items:center;justify-content:center;font-size:22px}
+p{margin:8px 0}
+.ct{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:20px 16px;margin:4px 0 16px;text-align:center}.ct h2{margin:0 0 6px;font-size:19px;color:var(--pri)}.ct p{margin:0 0 12px;color:var(--mut);font-size:14px;line-height:1.7}.ct a.tg{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:6px 22px;border-radius:14px;background:#229ed9;color:#fff;font-weight:800;text-decoration:none;border-bottom:4px solid #1778a6}.ct a.tg:focus-visible{outline:3px solid var(--pri);outline-offset:2px}.ttl{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}.ttl .l1{color:#fff;font-size:1.15em}.ttl .l2{color:#3a1a28;background:#ffe27a;padding:2px 18px;border-radius:999px;font-size:.95em;box-shadow:0 3px 0 rgba(0,0,0,.18)}.mut{color:var(--mut);font-size:14px}
+.txt{font-size:17px;line-height:2.2}
+.k{border:0;font:inherit;font-weight:700;border-radius:10px;padding:0 8px;cursor:pointer}
+.k[data-k=a]{background:var(--pink);color:var(--pinkink)}.k[data-k=b]{background:var(--vio);color:var(--vioink)}.k[data-k=c]{background:var(--okbg);color:var(--ok)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--pri);outline-offset:2px}
+.note{background:var(--note);color:var(--noteink);border-radius:14px;padding:10px 14px;margin-top:12px;font-size:15px;min-height:48px}
+.btn{font:inherit;font-weight:800;background:var(--acc);color:#fff;border:0;border-bottom:4px solid var(--accd);border-radius:14px;padding:6px 20px;cursor:pointer;min-height:48px}
+.btn:active{transform:translateY(2px);border-bottom-width:2px}
+.btn.s{background:var(--card);color:var(--pri);border:2px solid var(--pri);border-bottom-width:4px}
+.btn.q{min-height:40px;padding:2px 14px;font-size:15px}
+.row{display:flex;gap:10px;justify-content:space-between;margin-top:14px;flex-wrap:wrap}
+.chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0}
+.chip{border-radius:12px;padding:8px 10px;font-size:14px;text-align:center;font-weight:600}
+.y{background:var(--okbg);color:var(--ok)}.n{background:var(--badbg);color:var(--bad)}
+.ctl{background:var(--pribg);border-radius:16px;padding:12px;margin:8px 0}
+.sl{display:flex;align-items:center;gap:10px}.sl input[type=range]{flex:1;accent-color:var(--acc);height:34px;min-width:0}
+.num{display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap}
+input[type=number]{font:inherit;font-weight:800;width:96px;height:48px;border:2px solid var(--pri);border-radius:12px;background:var(--card);color:var(--ink);text-align:center;direction:ltr;font-size:18px}
+.er{color:var(--bad);font-size:14px;min-height:22px}
+svg{width:100%;height:auto;display:block;border-radius:14px}
+.dl{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px;direction:ltr;justify-content:flex-end}
+.dl span{min-width:40px;text-align:center;border:2px solid var(--line);border-radius:10px;padding:0 8px;font-weight:700}
+.dl span.c{background:var(--okbg);color:var(--ok);border-color:var(--ok)}.dl span.m4{background:var(--ok);color:var(--card);border-color:var(--ok)}
+.ln{display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--pribg);border-radius:12px;padding:4px 12px;margin:8px 0;border-right:5px solid var(--pri);flex-wrap:wrap}
+.ln .m{font-size:17px}.ln.best{background:var(--okbg);border-right-color:var(--ok)}.tag{font-size:13px;font-weight:800;color:var(--ok)}
+.fb{border-radius:14px;padding:10px 14px;margin-top:10px;font-size:15px}
+.big{font-size:22px;font-weight:800;color:var(--ok)}
+.ans{background:var(--okbg);border-radius:14px;padding:6px 14px;margin:10px 0}
+footer{text-align:center;color:var(--mut);font-size:13px;margin-top:18px}
+.pnl{display:none}.pnl.on{display:block}
+@media(prefers-reduced-motion:no-preference){.pnl.on{animation:f .25s ease-out}@keyframes f{from{opacity:0}to{opacity:1}}}
+.thb{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);left:10px;z-index:50;width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,255,255,.65);background:rgba(0,0,0,.28);color:#fff;font-size:20px;cursor:pointer;padding:0;line-height:1}
+.thb:focus-visible{outline:3px solid #ffd23f;outline-offset:2px}
+.fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1.4;margin:0 4px}.fr>span:first-child{border-bottom:2px solid currentColor;padding:0 8px}
+.po{fill:var(--ok);stroke:var(--card);stroke-width:1.5}
+@media(prefers-reduced-motion:no-preference){.po{transform-box:fill-box;transform-origin:center;animation:pp .35s both}@keyframes pp{from{transform:scale(0)}}}
+.tg2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}.tg2 .btn{padding:2px 8px}.btn.off{background:var(--card);color:var(--pri);border:2px solid var(--pri);border-bottom-width:4px}.btn.c:not(.off){background:var(--vio);color:var(--vioink);border:2px solid var(--vioink);border-bottom-width:4px}.btn.o:not(.off){background:var(--pink);color:var(--pinkink);border:2px solid var(--pinkink);border-bottom-width:4px}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.cmp>div{border-radius:14px;padding:10px;font-size:15px;line-height:1.8;text-align:center}.cmp .c1{background:var(--vio);color:var(--vioink)}.cmp .c2{background:var(--pink);color:var(--pinkink)}.tc,.to,.tp,.t1{border-radius:8px;padding:0 6px;font-weight:700}.tc{background:var(--vio);color:var(--vioink)}.to{background:var(--pink);color:var(--pinkink)}.tp{background:var(--okbg);color:var(--ok)}.t1{background:var(--note);color:var(--noteink)}
+svg text{font-family:Cairo,Tahoma,sans-serif}
+</style>
+</head>
+<body>
+<div class="hero">
+<span class="lvl">السنة الرابعة متوسط · الحساب والـ PGCD</span>
+<h1 class="ttl"><span class="l1">وضعيات الأعمدة</span><span class="l2">" المسار المغلق والمسار المفتوح "</span></h1>
+<div class="by">من إعداد الأستاذ: <b>كحول داود</b></div>
+</div>
+<div class="w">
+<nav id="nav" aria-label="مراحل الدرس"></nav>
+
+<section class="pnl on card" id="p0">
+<h2><i>📖</i>اقرأ الوضعيتين جيدًا</h2>
+<p class="txt"><b class="tc">الوضعية 1 (مغلق)</b><br> في الشكل وضعنا أعمدة على <button class="k" data-k="a">محيط المستطيل</button> (<span class="m">12 m × 9 m</span>) بحيث تكون المسافات بينها متساوية <button class="k" data-k="c">وأكبر ما يمكن</button>، مع وضع عمود في كل ركن.</p>
+<p class="txt"><b class="to">الوضعية 2 (مفتوح)</b><br> نفس المستطيل، لكن الأعمدة توضع <button class="k" data-k="b">على الضلعين [AB] و[BC] فقط</button>، مع عمود في كل من الرؤوس A و B و C.</p>
+<p class="mut">اضغط على العبارات الملونة لتفهم ماذا تعني.</p>
+<div class="note" id="kn">في الوضعية الأولى نعود إلى نقطة الانطلاق (مسار مغلق)، وفي الثانية لا نعود (مسار مفتوح).</div>
+<div class="row"><span></span><button class="btn" data-go="1">جرّب بنفسك</button></div>
+</section>
+
+<section class="pnl card" id="p1">
+<h2><i>🧪</i>ضع الأعمدة بنفسك</h2>
+<p class="mut">اختر نوع المسار ثم حرّك المسافة بين كل عمودين.</p>
+<div class="tg2"><button class="btn c" id="mc">مسار مغلق</button><button class="btn o off" id="mo">مسار مفتوح</button></div>
+<div class="ctl"><div class="sl"><span class="mut">المسافة</span><input type="range" id="d" min="1" max="12" value="3" aria-label="المسافة بين كل عمودين"><b class="m" id="dv">3 m</b></div></div>
+<svg id="g" viewBox="0 0 320 235" role="img" aria-label="مستطيل عليه أعمدة"></svg>
+<div class="chips" id="ch"></div>
+<div class="fb" id="vd"></div>
+<div class="note">🟢 الأعمدة الخضراء هي الأعمدة الموضوعة.<br><span class="tc">المسار المغلق بالبنفسجي</span><br><span class="to">المسار المفتوح بالوردي</span><br>بدّل بين المسارين وقارن عدد الأعمدة.</div>
+<div class="row"><button class="btn s" data-go="0">السابق</button><button class="btn" data-go="2">لماذا PGCD؟</button></div>
+</section>
+
+<section class="pnl card" id="p2">
+<h2><i>💡</i>لماذا نستعمل PGCD؟</h2>
+<p>لكي تتساوى المسافات وتصل الأعمدة إلى كل ركن بالضبط، يجب أن تكون المسافة:</p>
+<div class="note"><b>قاسمًا مشتركًا لـ <span class="m">12</span> و<span class="m">9</span></b>، وبما أنها <b>أكبر ما يمكن</b> فهي <b>أكبر قاسم مشترك</b>.</div>
+<p class="mut" style="margin-top:12px">قواسم <span class="m">12</span>:</p><div class="dl" id="d1"></div>
+<p class="mut">قواسم <span class="m">9</span>:</p><div class="dl" id="d2"></div>
+<button class="btn s" id="rv">اكتشف القواسم المشتركة</button>
+<div id="rs" style="display:none"><div class="ln best"><span>خوارزمية إقليدس:</span><span class="m">12 = 9 × 1 + 3</span></div><div class="ln"><span></span><span class="m">9 = 3 × 3 + 0</span></div><div class="fb y">آخر باقٍ غير معدوم هو <span class="tp">3</span><br>إذن <span class="m">PGCD(12 ; 9) = 3</span><br>المسافة بين كل عمودين هي <span class="tp">3 m</span> في الوضعيتين.</div></div>
+<div class="row"><button class="btn s" data-go="1">السابق</button><button class="btn" data-go="3">كم عمودًا؟</button></div>
+</section>
+
+<section class="pnl card" id="p3">
+<h2><i>🔍</i>لماذا يختلف العدد؟</h2>
+<p class="mut">حرّك عدد الأجزاء (المسافات) وقارن بين العدد الذي نحصل عليه من الأعمدة في كل مسار.</p>
+<div class="ctl"><div class="sl"><span class="mut">الأجزاء</span><input type="range" id="n" min="2" max="8" value="4" aria-label="عدد الأجزاء"><b class="m" id="nv">4</b></div></div>
+<svg id="g2" viewBox="0 0 320 215" role="img" aria-label="مقارنة بين المسار المفتوح والمغلق"></svg>
+<div class="cmp"><div class="c2"><b>مسار مفتوح</b><br><span id="o1"></span></div><div class="c1"><b>مسار مغلق</b><br><span id="o2"></span></div></div>
+<div class="fb" style="background:var(--pink);color:var(--pinkink)"><b>المفتوح:</b><br>للطرفين عمودان مختلفان،<br>فنضيف <span class="m">1</span> إلى عدد الأجزاء.</div><div class="fb" style="background:var(--vio);color:var(--vioink)"><b>المغلق:</b><br>الطرف الأخير هو نفسه الأول،<br>فعدد الأعمدة = عدد الأجزاء.</div>
+<div class="row"><button class="btn s" data-go="2">السابق</button><button class="btn" data-go="4">الإجابة</button></div>
+</section>
+
+<section class="pnl card" id="p4">
+<h2><i>✅</i>الإجابة المفصلة</h2>
+<p><b>المسافة:</b><br><span class="m">PGCD(12 ; 9) = 3</span><br>إذن المسافة بين كل عمودين هي <span class="tp">3 m</span></p>
+<div class="cmp"><div class="c1"><b>الوضعية 1 (مغلق)</b><br><span class="tc">عدد الأعمدة = عدد الأجزاء</span><br><span class="m"><span class="fr"><span>(12 + 9) × 2</span><span>3</span></span> = 14</span><br><span class="tp">14 عمودًا</span></div><div class="c2"><b>الوضعية 2 (مفتوح)</b><br><span class="to">عدد الأعمدة = عدد الأجزاء + 1</span><br><span class="m"><span class="fr"><span>12 + 9</span><span>3</span></span> + 1 = 7 + 1 = 8</span><br><span class="tp">8 أعمدة</span></div></div>
+<div class="fb y"><b>القاعدة:</b><br>1) نحسب <span class="t1">PGCD</span> فنجد المسافة.<br>2) نقسم طول المسار على المسافة فنجد عدد الأجزاء.<br>3) <span class="tc">المسار المغلق:</span> عدد الأعمدة = عدد الأجزاء.<br>4) <span class="to">المسار المفتوح:</span> عدد الأعمدة = عدد الأجزاء <span class="m">+ 1</span>.</div>
+<div class="row"><button class="btn s" data-go="3">السابق</button><button class="btn" data-go="5">تمرّن</button></div>
+</section>
+
+<section class="pnl card" id="p5">
+<h2><i>🏆</i>الآن دورك</h2>
+<p>مستطيل بعداه <b class="m" id="qa"></b> و<b class="m" id="qb"></b>. نضع أعمدة <b id="qt"></b>، بمسافات متساوية وأكبر ما يمكن، مع عمود في كل رأس.</p>
+<p><label>المسافة (m): <input type="number" id="a1" inputmode="numeric" min="1"></label></p>
+<p><label>عدد الأعمدة: <input type="number" id="a2" inputmode="numeric" min="1"></label></p>
+<div class="er" id="qe"></div>
+<div class="row"><button class="btn" id="ck">تحقق</button><button class="btn s" id="nw">تمرين آخر</button></div>
+<div class="fb" id="qf" style="display:none"></div>
+<div class="row"><button class="btn s" data-go="4">السابق</button><button class="btn s" data-go="0">من البداية</button></div>
+</section>
+
+<section class="ct" aria-label="الآراء والاقتراحات">
+<h2>💬 نرحب بآرائكم ... واقتراحاتكم ... واستفساراتكم ...</h2>
+<p>عبر هذا الرابط:</p>
+<a class="tg" href="https://t.me/Daoudk" target="_blank" rel="noopener noreferrer"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true" style="width:22px;height:22px"><path d="M21.9 3.6 2.8 11c-1.3.5-1.3 1.3-.2 1.6l4.9 1.5 1.9 5.8c.2.6.1.8.7.8.5 0 .7-.2 1-.5l2.4-2.3 4.9 3.6c.9.5 1.5.2 1.7-.8l3.2-15.3c.3-1.3-.5-1.9-1.4-1.5zM9 13.6l9.5-6c.4-.3.8-.1.5.2l-7.9 7.1-.3 3.3z"/></svg><span dir="ltr">t.me/Daoudk</span></a>
+</section>
+<footer>جميع الحقوق محفوظة للأستاذ كحول داود</footer>
+</div>
+<script>
+function M(s){return '<span class="m">'+s+'</span>';}
+function $(i){return document.getElementById(i);}
+var N=6,nav=$('nav');
+for(var i=0;i<N;i++){var b=document.createElement('button');b.setAttribute('aria-label','المرحلة '+(i+1));b.textContent=i+1;b.dataset.go=i;nav.appendChild(b);}
+function go(n){for(var i=0;i<N;i++){$('p'+i).className='pnl card'+(i==n?' on':'');nav.children[i].className=i==n?'on':(i<n?'done':'');}window.scrollTo(0,0);}
+document.addEventListener('click',function(e){var t=e.target.closest('[data-go]');if(t)go(+t.dataset.go);});
+go(0);
+var KN={a:'<span class="tc">المسار المغلق</span><br>نمشي حول المستطيل كله ونعود إلى نقطة الانطلاق، <br>فالطول المعتبر هو المحيط '+M('(12 + 9) × 2 = 42 m')+'.',b:'<span class="to">المسار المفتوح</span><br>نمشي على [AB] ثم [BC] فقط ولا نعود، <br>فالطول هو '+M('12 + 9 = 21 m')+'.',c:'المسافة تقسم 12 و9 معًا، وأكبر ما يمكن يعني أكبر قاسم مشترك: '+M('PGCD(12 ; 9) = 3')+'.'};
+document.querySelectorAll('.k').forEach(function(k){k.onclick=function(){$('kn').innerHTML=KN[k.dataset.k];};});
+var A=12,B=9,mode='c',S=20,ox=40,oy=34;
+function pts(d,m){var p=[],k;for(k=0;k<=A/d;k++)p.push([k*d,0]);for(k=1;k<=B/d;k++)p.push([A,k*d]);if(m=='c'){for(k=1;k<=A/d;k++)p.push([A-k*d,B]);for(k=1;k<B/d;k++)p.push([0,B-k*d]);}return p;}
+function X(x){return ox+x*S;}function Y(y){return oy+y*S;}
+function draw(){var d=+$('d').value,ok=A%d==0&&B%d==0,s='',w=A*S,h=B*S,c=mode=='c';
+$('dv').textContent=d+' m';
+s+='<rect x="'+ox+'" y="'+oy+'" width="'+w+'" height="'+h+'" style="fill:none;stroke:var(--line);stroke-width:2;stroke-dasharray:5 4"/>';
+s+=c?'<rect x="'+ox+'" y="'+oy+'" width="'+w+'" height="'+h+'" style="fill:none;stroke:#8b5cf6;stroke-width:5"/>':'<polyline points="'+X(0)+','+Y(0)+' '+X(A)+','+Y(0)+' '+X(A)+','+Y(B)+'" style="fill:none;stroke:#ec4899;stroke-width:5;stroke-linejoin:round"/>';
+if(ok)pts(d,mode).forEach(function(p,i){s+='<circle class="po" cx="'+X(p[0])+'" cy="'+Y(p[1])+'" r="5.5" style="animation-delay:'+i*30+'ms"/>';});
+var T='font-size="13" font-weight="700" style="fill:var(--mut)"';
+s+='<text x="'+(ox+w/2)+'" y="'+(oy-18)+'" text-anchor="middle" '+T+'>12 m</text><text x="'+(ox-16)+'" y="'+(oy+h/2+4)+'" text-anchor="middle" '+T+'>9 m</text>';
+s+='<text x="'+(ox-8)+'" y="'+(oy-6)+'" text-anchor="end" '+T+'>A</text><text x="'+(ox+w+8)+'" y="'+(oy-6)+'" '+T+'>B</text><text x="'+(ox+w+8)+'" y="'+(oy+h+16)+'" '+T+'>C</text><text x="'+(ox-8)+'" y="'+(oy+h+16)+'" text-anchor="end" '+T+'>D</text>';
+$('g').innerHTML=s;
+function cp(t,y){return '<div class="chip '+(y?'y':'n')+'">'+t+(y?' ✓':'')+'</div>';}
+$('ch').innerHTML=cp(M(d)+(A%d==0?' يقسم ':' لا يقسم ')+M(12),A%d==0)+cp(M(d)+(B%d==0?' يقسم ':' لا يقسم ')+M(9),B%d==0);
+var v=$('vd');v.className='fb '+(ok?'y':'n');
+if(!ok){v.innerHTML='مرفوض: المسافة '+M(d+' m')+' لا تقسم البعدين معًا، فلا تصل الأعمدة إلى كل الرؤوس بمسافات متساوية.';return;}
+var P=pts(d,mode).length,q=c?(A+B)*2/d:(A+B)/d;
+v.innerHTML='<b>مقبول ✓</b><br>عدد الأجزاء: '+M((c?'(12 + 9) × 2 ÷ ':'(12 + 9) ÷ ')+d+' = '+q)+'<br>عدد الأعمدة: '+(c?'<span class="tc">مغلق: = الأجزاء</span> ':'<span class="to">مفتوح: = الأجزاء + 1</span> ')+'<span class="big">'+(c?M(q):M(q+' + 1 = '+P))+'</span>'+(d==3?'':'<br>لكن المطلوب أكبر مسافة ممكنة وهي '+M('3 m')+'.');}
+$('d').oninput=draw;
+function setM(m){mode=m;$('mc').className='btn c'+(m=='c'?'':' off');$('mo').className='btn o'+(m=='o'?'':' off');$('mc').setAttribute('aria-pressed',m=='c');$('mo').setAttribute('aria-pressed',m=='o');draw();}
+$('mc').onclick=function(){setM('c');};$('mo').onclick=function(){setM('o');};setM('c');
+function dv(n){var r=[];for(var i=1;i<=n;i++)if(n%i==0)r.push(i);return r;}
+var D1=dv(12),D2=dv(9);
+function lst(id,X1,Y1,on){$(id).innerHTML=X1.map(function(x){var c=on&&Y1.indexOf(x)>=0;return '<span class="'+(c?(x==3?'m4':'c'):'')+'">'+x+'</span>';}).join('');}
+lst('d1',D1,D2,0);lst('d2',D2,D1,0);
+$('rv').onclick=function(){lst('d1',D1,D2,1);lst('d2',D2,D1,1);$('rs').style.display='block';};
+function draw2(){var n=+$('n').value,s='',T='font-size="12" font-weight="700" style="fill:var(--mut)"',i,x,a;$('nv').textContent=n;
+s+='<text x="160" y="16" text-anchor="middle" '+T+'>مسار مفتوح</text><line x1="30" y1="46" x2="290" y2="46" style="stroke:#ec4899;stroke-width:5;stroke-linecap:round"/>';
+for(i=0;i<=n;i++){x=30+260*i/n;s+='<circle class="po" cx="'+x+'" cy="46" r="6"/>';}
+s+='<text x="160" y="84" text-anchor="middle" '+T+'>مسار مغلق</text><circle cx="160" cy="145" r="52" style="fill:none;stroke:#8b5cf6;stroke-width:5"/>';
+for(i=0;i<n;i++){a=-Math.PI/2+2*Math.PI*i/n;s+='<circle class="po" cx="'+(160+52*Math.cos(a))+'" cy="'+(145+52*Math.sin(a))+'" r="6"/>';}
+$('g2').innerHTML=s;
+$('o1').innerHTML=M(n+' + 1 = '+(n+1))+' أعمدة';$('o2').innerHTML=M(n)+' أعمدة';}
+$('n').oninput=draw2;draw2();
+var PR=[[12,9],[20,15],[18,12],[24,16],[30,20],[28,21],[36,24],[16,10]],pi=-1,pm='c';
+function g(a,b){return b?g(b,a%b):a;}
+function np(){var j;do{j=Math.floor(Math.random()*PR.length)}while(j==pi);pi=j;pm=Math.random()<.5?'c':'o';
+$('qa').textContent=PR[j][0]+' m';$('qb').textContent=PR[j][1]+' m';
+$('qt').textContent=pm=='c'?'على محيط المستطيل (مسار مغلق)':'على طول ضلعين متتاليين فقط (مسار مفتوح)';
+$('qt').className=pm=='c'?'tc':'to';$('a1').value='';$('a2').value='';$('qf').style.display='none';$('qe').textContent='';}
+np();$('nw').onclick=np;
+$('ck').onclick=function(){var x=$('a1').value,y=$('a2').value,er=$('qe'),f=$('qf');
+if(x===''||y===''){er.textContent='أدخل الإجابتين قبل التحقق.';return;}er.textContent='';
+var a=PR[pi][0],b=PR[pi][1],G=g(a,b),c=pm=='c',n=c?(a+b)*2/G:(a+b)/G,T=n+(c?0:1);f.style.display='block';
+var sol=c?M('('+a+' + '+b+') × 2 ÷ '+G+' = '+T):M('('+a+' + '+b+') ÷ '+G+' + 1 = '+n+' + 1 = '+T);
+if(+x==G&&+y==T){f.className='fb y';f.innerHTML='أحسنت! 🎉<br>'+M('PGCD('+a+' ; '+b+') = '+G)+'<br>'+sol+' عمودًا.';}
+else if(+x!=G){f.className='fb n';f.innerHTML='راجع المسافة: احسب '+M('PGCD('+a+' ; '+b+')')+' بخوارزمية إقليدس.';}
+else if(!c&&+y==n){f.className='fb n';f.innerHTML='المسافة صحيحة، لكنك نسيت أن المسار المفتوح يحتاج عمودًا إضافيًا: أضف '+M('1')+'.';}
+else if(c&&+y==T/2){f.className='fb n';f.innerHTML='المسافة صحيحة، لكن المسار المغلق يشمل المحيط كله: اضرب '+M('(a + b)')+' في '+M('2')+' قبل القسمة.';}
+else{f.className='fb n';f.innerHTML='المسافة صحيحة. تذكر:<br><span class="tc">المغلق</span> '+M('(a + b) × 2 ÷ PGCD')+'<br><span class="to">المفتوح</span> '+M('(a + b) ÷ PGCD + 1');}};
+</script>
+<button id="thb" class="thb" type="button"></button>
+<script>(function(){var b=document.getElementById("thb"),r=document.documentElement;function u(){var d=r.getAttribute("data-theme")==="dark";b.textContent=d?"☀️":"🌙";b.setAttribute("aria-label",d?"التبديل إلى المظهر الفاتح":"التبديل إلى المظهر الليلي");}b.onclick=function(){var d=r.getAttribute("data-theme")==="dark"?"light":"dark";r.setAttribute("data-theme",d);try{localStorage.setItem(TK,d);}catch(e){}u();};u();})();</script>
+</body>
+</html>
