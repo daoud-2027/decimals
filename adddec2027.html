@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>جمع وطرح وضرب الأعداد العشرية - الأستاذ كحول داود</title>
+<script>var TK="th_dec";try{var s=localStorage.getItem(TK);document.documentElement.setAttribute("data-theme",s||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"));}catch(e){document.documentElement.setAttribute("data-theme","light");}</script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Changa:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--tx:#1b2447;--mu:#475085;--gl:rgba(255,255,255,.9);--bd:#d3dafc;--in:#fff;--ey:#b45309;--ac:#0e7490;--op:#6b76b0;--bgd:linear-gradient(135deg,#eaf0ff,#f6efff 55%,#eafaf5);--tcb:rgba(14,165,233,.12);--tcl:rgba(14,165,233,.45);--okc:#15803d;--noc:#b3261e;--cx:#0369a1;--cm:#7c3aed;--cc:#ea580c;--cp:#15803d;--cz:#b45309;--cs:#be185d;--cdp:#0e7490;--cmm:#dc2626;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="dark"]{--tx:#e8eeff;--mu:#b8c4ee;--gl:rgba(255,255,255,.07);--bd:rgba(255,255,255,.2);--in:rgba(255,255,255,.1);--ey:#fde68a;--ac:#a5f3fc;--op:#94a3d8;--bgd:linear-gradient(135deg,#050b2e,#0f1f5c 55%,#1b1f6b);--tcb:rgba(56,189,248,.12);--tcl:rgba(56,189,248,.35);--okc:#86efac;--noc:#fca5a5;--cx:#7dd3fc;--cm:#c4b5fd;--cc:#fdba74;--cp:#86efac;--cz:#fcd34d;--cs:#f9a8d4;--cdp:#67e8f9;--cmm:#fca5a5}
+html{scroll-padding-top:env(safe-area-inset-top,0px);color-scheme:light}html[data-theme="dark"]{color-scheme:dark}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;min-height:100vh;font-family:Cairo,"Segoe UI",sans-serif;color:var(--tx);background:var(--bgd) fixed}
+.hidden{display:none!important}.wrap{max-width:720px;margin:0 auto;padding:14px}
+.title{font-size:clamp(1.7rem,8vw,2.8rem);font-weight:900;text-align:center;margin:8px 0 0;line-height:1.5;background:linear-gradient(90deg,#2563eb,#7c3aed,#db2777);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{text-align:center;margin:2px 0;color:var(--ac);font-weight:700;font-size:clamp(1rem,4.5vw,1.3rem)}
+.by{text-align:center;margin:0 0 6px;color:var(--mu)}.by b{color:var(--okc);font-weight:900}
+.glass{background:var(--gl);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--bd);border-radius:22px;box-shadow:0 10px 30px rgba(60,70,150,.18);padding:18px;margin:14px 0}
+.math{display:flex;align-items:center;justify-content:center;gap:8px;direction:ltr;font-family:Changa,sans-serif;font-size:clamp(1.2rem,5.5vw,2rem);white-space:nowrap}
+input,select{font:inherit;text-align:center;color:var(--tx);background:var(--in);border:2px solid var(--bd);border-radius:12px;padding:4px}
+.math input{width:clamp(5rem,26vw,8rem)}.opS{font-size:2.8rem;font-weight:900;color:var(--cc);min-width:2.2rem;text-align:center;line-height:1}
+.ops{display:flex;gap:12px;justify-content:center;margin-top:14px}.ops button{width:3.6rem;height:3.6rem;border-radius:16px;border:2px solid var(--cc);background:var(--in);color:var(--cc);font:900 2.2rem/1 Changa,sans-serif;cursor:pointer;padding:0}.ops button.on{background:var(--cc);color:#fff;box-shadow:0 6px 16px rgba(234,88,12,.35)}
+input:focus,select:focus{outline:none;border-color:#38bdf8;box-shadow:0 0 0 3px rgba(56,189,248,.3)}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.btn{font:700 1rem Cairo,sans-serif;color:#fff;border:0;border-radius:14px;padding:11px 20px;cursor:pointer;background:linear-gradient(135deg,#3b82f6,#8b5cf6);box-shadow:0 6px 18px rgba(59,130,246,.35)}
+.btn.alt{background:linear-gradient(135deg,#10b981,#06b6d4)}.btn.ghost{background:var(--in);color:var(--tx);box-shadow:none;border:1px solid var(--bd);padding:7px 14px;font-size:.9rem}
+.btn:active{transform:scale(.97)}
+#hm{text-align:center;color:var(--noc);min-height:1.5em;margin:8px 0 0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px}#lbl{font-weight:700;color:var(--ac)}
+.teacher{display:flex;gap:10px;align-items:flex-start;background:var(--tcb);border:1px solid var(--tcl);border-radius:16px;padding:10px 12px;margin:12px 0;min-height:64px}
+.teacher.badm{background:rgba(239,68,68,.15);border-color:rgba(239,68,68,.5)}.teacher p{margin:0;line-height:1.8}.av{font-size:1.8rem}
+.eq{display:inline-block;direction:ltr;unicode-bidi:isolate;font-family:Changa,sans-serif;font-weight:700;color:var(--ey)}
+.board{overflow-x:auto;padding:6px 0;direction:ltr}
+#rows{display:flex;flex-direction:column;align-items:stretch;gap:12px;margin-top:6px}
+.row{display:flex;direction:ltr;align-items:center;justify-content:center;gap:10px;font-family:Changa,sans-serif;font-size:clamp(1.2rem,6vw,2rem);white-space:nowrap}
+.grid{display:flex;flex-direction:column;align-items:stretch;direction:ltr;font-family:Changa,sans-serif;font-size:max(1.3rem,min(2.4rem,calc((min(100vw,720px) - 76px)/((var(--cols,9) + 1.5)*1.25))));gap:2px;width:max-content;margin:0 auto}
+.gr{display:flex;align-items:center;justify-content:center;min-height:1.5em}
+.gc{display:inline-flex;align-items:center;justify-content:center;width:1.5ch;min-width:1.5ch;height:1.5em;border-radius:8px;border:2px solid transparent;font-weight:700}
+.gc.cm{width:.8ch;min-width:.8ch}.sg{width:1.5ch;text-align:center;color:var(--op)}
+.ln{height:3px;background:currentColor;margin:2px 0;border-radius:2px}
+.cy{font-size:.55em;color:var(--cc);font-weight:800;background:rgba(234,88,12,.12);border-radius:6px}.cur{background:rgba(56,189,248,.2)}
+.gc input{width:1.4em;height:1.3em;font:inherit;padding:0}
+.padz{opacity:.55}
+.cx{color:var(--cx)}.cm{color:var(--cm)}.cc{color:var(--cc)}.cp{color:var(--cp)}.cz{color:var(--cz)}.cs{color:var(--cs)}.cdp{color:var(--cdp)}.cmm{color:var(--cmm);padding:0 2px}
+.gc.hl{background:rgba(250,204,21,.3);border-color:#facc15}
+#mg .gc{width:2ch;min-width:2ch;margin:0 1px}#mg .gc.sl{width:1ch;min-width:1ch;margin:0;font-weight:900}#mg .sg{width:2ch}#mg .gc.sl input{font-size:.7em;padding:0}
+
+.chal .gc{width:2ch;min-width:2ch;margin:0 2px}.chal .gc.cm{width:1.4ch;min-width:1.4ch}
+.gc input{width:100%;height:100%;min-width:0;padding:0;font:inherit;text-align:center;border-radius:8px;border:2px solid var(--bd)}
+.gr.cr{min-height:.95em}.gr.cr .gc{height:.95em}
+.chal .gr.cr input{width:1.8em;height:1.5em;font-size:.5em;color:var(--cc);font-weight:800;border:1.5px dashed var(--cc);background:rgba(234,88,12,.08);border-radius:6px}
+.gc.cy.lk{background:rgba(234,88,12,.14);border-color:var(--cc)}
+.lk{border-color:#22c55e;background:rgba(34,197,94,.14)}
+.gp{display:inline-block;min-width:.9ch;height:1.4em;border-bottom:2px dashed var(--op);text-align:center;cursor:pointer;color:var(--cmm);font-weight:700}.gp.on{border-bottom-color:var(--cmm)}
+.cdg{display:inline-block;padding:0 3px;color:var(--cs);font-weight:700}
+.lg{direction:rtl;display:flex;flex-wrap:wrap;gap:4px 12px;justify-content:center;font-size:.82rem;font-weight:700;margin:6px 0 2px}.lg i{display:inline-block;width:.7em;height:.7em;border-radius:50%;margin-inline-end:4px;background:currentColor}
+.mb{display:flex;flex-direction:column;align-items:flex-end;direction:ltr;font-family:Changa,sans-serif;font-size:clamp(1.5rem,7.5vw,2.3rem);font-variant-numeric:tabular-nums;letter-spacing:.12em;width:max-content;margin:0 auto;gap:2px}
+.mb .mr{display:flex;align-items:center;gap:8px;min-height:1.5em}.mb .ln{align-self:stretch}.mb .sg{width:auto}
+.n{display:inline-block;min-width:3ch;padding:0 6px;text-align:center;border-radius:10px;border:2px solid transparent;font-weight:700}
+.n.empty{border:2px dashed var(--op);min-height:1.6em}.n input{width:clamp(5rem,26vw,9rem);font:inherit;padding:0}
+.ok{background:rgba(34,197,94,.22);color:var(--okc)!important;border-color:#22c55e}
+.no{background:rgba(239,68,68,.3)!important;color:var(--noc)!important;border-color:#ef4444!important}
+.glow{animation:gl 1.1s infinite alternate;background:rgba(250,204,21,.3);color:var(--ey);border-radius:10px}
+.res{text-align:center;direction:ltr;font:700 clamp(1.2rem,5.5vw,2rem) Changa,sans-serif;color:var(--ey);animation:gl 1.1s infinite alternate;border-radius:16px;padding:10px;margin-top:10px;background:rgba(250,204,21,.18)}
+.panel{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.4);border-radius:16px;padding:14px;text-align:center}
+.calc{max-width:340px;margin:12px auto 0;background:linear-gradient(160deg,#1e293b,#0f172a);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:12px;color:#e8eeff}
+.calc .head{font-weight:700;color:#fbbf24;margin-bottom:8px}.keys{display:flex;flex-wrap:wrap;gap:6px;direction:ltr;justify-content:center}
+.key{min-width:2.3rem;padding:5px 9px;text-align:center;font:700 1.1rem Changa,sans-serif;border-radius:9px;background:#334155;color:#fff;box-shadow:0 3px 0 #0b1220}.key.o2{background:#f59e0b;color:#1c1917}
+.lcd{direction:ltr;text-align:right;font:500 1.8rem Changa,sans-serif;background:#c7d8b0;color:#1f2a14;border-radius:10px;padding:6px 12px;margin:10px 0 8px;overflow-x:auto}
+.cnote{line-height:1.7;font-size:.95rem}
+.tgc{text-align:center;padding:22px 16px}.tgt{font-size:22px;font-weight:800;color:#1b8a9c;line-height:2}
+.tg{display:flex;align-items:center;justify-content:center;gap:8px;background:#229ed9;color:#fff;text-decoration:none;font-weight:800;font-size:22px;border-bottom:4px solid #1678a3;border-radius:22px;min-height:64px;margin:14px auto 0;max-width:320px}.tg svg{width:34px;height:34px;fill:#fff}
+footer{text-align:center;color:var(--mu);font-size:.9rem;padding:14px 0 6px}
+.fade{animation:fade .6s both}.shake{animation:shake .45s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
+@keyframes gl{from{box-shadow:0 0 4px #facc15}to{box-shadow:0 0 20px #facc15}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important}}
+.thb{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);left:10px;z-index:50;width:44px;height:44px;border-radius:50%;border:2px solid #3730a3;background:var(--in);color:#3730a3;font-size:20px;cursor:pointer;padding:0;line-height:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1 class="title">جمع وطرح وضرب الأعداد العشرية</h1>
+<p class="sub">السنة الأولى متوسط</p>
+<p class="by">إعداد الأستاذ: <b>كحول داود</b></p>
+
+<section id="home" class="glass fade">
+<p style="text-align:center;margin:0 0 12px">أدخل عددين عشريين واختر العملية:</p>
+<div class="math"><input id="ia" inputmode="decimal" placeholder="12,68" autocomplete="off"><span id="opS" class="opS">+</span><input id="ib" inputmode="decimal" placeholder="7,3" autocomplete="off"></div>
+<input type="hidden" id="op" value="+">
+<div class="ops" id="ops" role="group" aria-label="العملية"><button type="button" data-v="+" class="on" aria-label="جمع">+</button><button type="button" data-v="-" aria-label="طرح">−</button><button type="button" data-v="*" aria-label="ضرب">×</button></div>
+<p id="hm"></p>
+<div class="btns"><button class="btn" id="bExp">📘 اشرح لي الطريقة</button><button class="btn alt" id="bCh">🎯 اختبرني (تحدي)</button></div>
+<div class="btns" style="margin-top:8px"><button class="btn ghost" id="bRn">🎲 مثال عشوائي</button></div>
+</section>
+
+<section id="work" class="glass hidden">
+<div class="top"><button class="btn ghost" id="bHome">🏠 عودة للبداية</button><span id="lbl"></span></div>
+<div class="teacher" id="teacher"></div>
+<div class="board"><div id="rows"></div></div>
+<div id="calc"></div><div id="ctl" style="margin-top:12px"></div><div id="final"></div>
+</section>
+
+<div class="glass tgc"><div class="tgt">💬 نرحب بآرائكم ... واقتراحاتكم ... واستفساراتكم ...</div><div style="color:var(--mu);font-size:17px;margin-top:6px">عبر هذا الرابط:</div><a class="tg" href="https://t.me/Daoudk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg><span style="direction:ltr">t.me/Daoudk</span></a></div>
+<footer>© جميع الحقوق محفوظة للأستاذ كحول داود</footer>
+</div>
+<script>
+const $=id=>document.getElementById(id),E=x=>`<span class="eq">${x}</span>`;
+const NM=['الوحدات','العشرات','المئات','الآلاف'],FM=['','الأجزاء من عشرة','الأجزاء من مئة','الأجزاء من ألف'];
+let N,OP,mI,mF,L,RS,ST,CR,LEAD,LZ,SW,S={};
+const sy=()=>OP=='*'?'×':OP=='+'?'+':'−',sw=()=>OP=='*'?'جداء':OP=='+'?'مجموع':'فرق';
+function parse(t){t=String(t).trim().replace(',','.');if(!/^\d{1,4}(\.\d{1,3})?$/.test(t))return null;const[i,f='']=t.split('.');return{ip:String(+i),fp:f}}
+const fd=x=>x.ip+(x.fp?','+x.fp:''),sc=x=>+x.ip*1000+ +x.fp.padEnd(3,'0'),nat=x=>+(x.ip+x.fp);
+const nz=s=>String(s).trim().replace('.',',').replace(/(,\d*?)0+$/,'$1').replace(/,$/,'');
+const mc=(p,d)=>{const s=String(p).padStart(d+1,'0');return d?s.slice(0,-d)+','+s.slice(-d):s};
+const fx3=n=>{const i=Math.floor(n/1000),f=String(n%1000).padStart(3,'0').replace(/0+$/,'');return f?i+','+f:''+i};
+function say(t,bad){const e=$('teacher');e.innerHTML='<span class="av">👨‍🏫</span><p>'+t+'</p>';e.classList.toggle('badm',!!bad);e.classList.remove('fade');void e.offsetWidth;e.classList.add('fade')}
+function shake(e){e.classList.remove('shake');void e.offsetWidth;e.classList.add('shake')}
+function show(v){['home','work'].forEach(x=>$(x).classList.toggle('hidden',x!==v))}
+function reset(){['rows','calc','ctl','final'].forEach(x=>$(x).innerHTML='')}
+function calc(keys,res,note){const d=i=>`style="animation-delay:${i*.28}s"`;
+$('calc').innerHTML=`<div class="calc"><div class="head">🧮 بالآلة الحاسبة</div><div class="keys">${keys.map((k,i)=>`<span class="key fade ${/^[+−×=]$/.test(k)?'o2':''}" ${d(i)}>${k}</span>`).join('')}</div><div class="lcd fade" ${d(keys.length)}>${res}</div><div class="cnote fade" ${d(keys.length+1)}>${note}</div></div>`}
+let SK=0;
+function nx(label){return new Promise(r=>{$('ctl').innerHTML=`<div class="btns" style="margin:0"><button class="btn fade" id="nx">${label}</button><button class="btn ghost" id="sk">تخطّي الشرح ⏩</button></div>`;$('nx').onclick=()=>{$('ctl').innerHTML='';r()};$('sk').onclick=()=>{SK=1;$('ctl').innerHTML='';r()}})}
+async function wt(l){if(!SK)await nx(l)}
+function mkInp(id){const e=$(id);e.classList.remove('empty');e.innerHTML='<input inputmode="decimal" autocomplete="off">';const i=e.firstChild;i.oninput=()=>i.value=i.value.replace(/[^\d.,]/g,'').slice(0,14);i.onkeydown=ev=>{if(ev.key==='Enter'&&$('chk'))$('chk').click()};return i}
+function ask(id,test,hint,done){const inp=mkInp(id);inp.focus();$('ctl').innerHTML='<div class="btns" style="margin:0"><button class="btn" id="chk">تحقق ✔</button></div>';
+$('chk').onclick=()=>{if(test(inp.value))done(inp.value);else{inp.classList.add('no');shake(inp);say(hint,1)}}}
+const addRow=h=>$('rows').insertAdjacentHTML('beforeend',`<div class="row fade">${h}</div>`);
+
+/* ---------- جمع وطرح: الحساب العمودي ---------- */
+function lay(){const[x,y]=N;mI=Math.max(x.ip.length,y.ip.length);mF=Math.max(x.fp.length,y.fp.length);L=mI+mF}
+function dgt(x,j){if(j<mI){const i=j-(mI-x.ip.length);return i>=0?x.ip[i]:null}const k=j-mI;return k<x.fp.length?x.fp[k]:'0'}
+function comp(){const[x,y]=N;let c=0;RS=[];ST=[];CR=[];
+for(let j=L-1;j>=0;j--){const a=+(dgt(x,j)||0),b=+(dgt(y,j)||0);
+if(OP=='+'){const s=a+b+c;RS[j]=s%10;CR[j]=s>9?1:0;ST[j]=[a,b,c,s]}else{const bb=b+c;let t=a,k=0;if(t<bb){t+=10;k=1}RS[j]=t-bb;CR[j]=k;ST[j]=[a,b,c,t,bb]}c=CR[j]}
+LEAD=c;LZ=RS.map((v,j)=>j<mI-1&&!LEAD&&RS.slice(0,j+1).every(z=>z==0))}
+const cname=j=>{const p=j-(mI-1);return p>0?FM[p]:NM[-p]};
+function row(p,s){let h=`<div class="gr${p=='C'||p=='D'?' cr':''}"><span class="sg">${s||''}</span><span class="gc" id="${p}L"></span>`;for(let j=0;j<L;j++){h+=`<span class="gc" id="${p}${j}"></span>`;if(j==mI-1&&mF>0)h+=`<span class="gc cm" id="${p}k"></span>`}return h+'</div>'}
+function grid(){$('rows').innerHTML=`<div class="grid" style="--cols:${L+2}">${row('C')}${row('A')}${row('B',sy())}${OP=='-'?row('D'):''}<div class="ln"></div>${row('R')}</div>`}
+function set(id,t,c){const e=$(id);if(!e)return;e.textContent=t;if(c)e.className+=' '+c}
+function putNums(pad){[['A',N[0]],['B',N[1]]].forEach(([p,x])=>{for(let j=0;j<L;j++){const c=dgt(x,j),pz=j>=mI&&j-mI>=x.fp.length;if(c!==null&&(!pz||pad))set(p+j,c,pz?'padz glow':'')}
+if(mF>0&&(x.fp.length>0||pad))set(p+'k',',',pad&&!x.fp.length?'glow':'')})}
+function hlcol(j){document.querySelectorAll('.cur').forEach(e=>e.classList.remove('cur'));['A','B','R','C'].forEach(p=>{const e=$(p+j);e&&e.classList.add('cur')})}
+function mark(j){if(OP=='+'){if(CR[j]){if(j>0)set('C'+(j-1),'1','cy');else set('RL','1','ok glow')}}else if(CR[j]){set('C'+j,'+10','cy');if(j>0)set('D'+(j-1),'+1','cy')}}
+function fmtRes(){let ip;if(LEAD)ip='1'+RS.slice(0,mI).join('');else ip=RS.slice(0,mI).join('').replace(/^0+(?=\d)/,'');const fp=RS.slice(mI).join('');return fp?ip+','+fp:ip}
+function colMsg(j){const[a,b,c,s,bb]=ST[j],n=cname(j);let m;
+if(OP=='+')m=`عمود ${n}: ${E(a+' + '+b+(c?' + '+c:'')+' = '+s)}`+(s>9?`. نكتب ${E(s%10)} ونحتفظ بـ ${E(1)} للعمود الموالي${j?'':' (فنكتبه في النتيجة)'}.`:`. نكتب ${E(s)}.`);
+else m=CR[j]?`عمود ${n}: العلوي ${a} أصغر من ${bb}${c?` (${b} + ${c} احتفاظ)`:''}، فنضيف 10 للرقم العلوي ليصبح ${a+10}، ونضيف 1 للرقم السفلي في العمود الموالي: ${E((a+10)+' − '+bb+' = '+RS[j])}.`:`عمود ${n}: ${E(a+' − '+bb+' = '+RS[j])}${c?` (حيث ${bb} = ${b} + ${c})`:''}.`;
+return m+(LZ[j]?' وهو صفر في بداية العدد فلا نكتبه.':'')}
+function finalAS(msg){const[x,y]=N,r=nz(fmtRes()),e=fx3(OP=='+'?sc(x)+sc(y):sc(x)-sc(y));
+$('final').innerHTML=`<div class="res fade">${fd(x)} ${sy()} ${fd(y)} = ${r}</div><div class="btns"><button class="btn alt" id="again">🔁 جرّب أعدادًا أخرى</button>${msg?'':'<button class="btn" id="tst">🎯 اختبرني بهذين العددين</button>'}</div>`;
+$('again').onclick=home;if($('tst'))$('tst').onclick=challenge;return e}
+async function explainAS(){
+const[x,y]=N;lay();comp();grid();let f=1;const go=async fn=>{await wt(f?'ابدأ الشرح ⬅️':'التالي ⬅️');f=0;$('calc').innerHTML='';fn()};
+const swp=SW?' (رتّبنا العددين لنطرح الأصغر من الأكبر)':'';
+say(OP=='+'?`لجمع عددين عشريين: ① نضع الفاصلة تحت الفاصلة ② نُتمّم بأصفار ③ نجمع عمودًا عمودًا من اليمين مع الاحتفاظ ④ نضع الفاصلة في النتيجة تحت الفاصلتين.`:`لطرح عددين عشريين${swp}: ① نضع الفاصلة تحت الفاصلة ② نُتمّم بأصفار ③ نطرح عمودًا عمودًا من اليمين بطريقة الاحتفاظ ④ نضع الفاصلة في النتيجة تحت الفاصلتين.`);
+await go(()=>{putNums(0);say(`نكتب ${E(fd(x))} ثم ${E(fd(y))} تحته بحيث تكون <b>الفاصلة تحت الفاصلة</b> والوحدات تحت الوحدات، والعشرات تحت العشرات...`)});
+if(mF>0&&(x.fp.length<mF||y.fp.length<mF))await go(()=>{putNums(1);say(`نُتمّم بأصفار على يمين الفاصلة (الخانات الوامضة) ليصبح للعددين عدد الأرقام نفسه بعد الفاصلة. هذا لا يغيّر قيمة العدد.`)});
+for(let j=L-1;j>=0;j--){
+if(j==mI-1&&mF>0)await go(()=>{set('Rk',',','ok glow');say(`وصلنا إلى الفاصلة: نضع الفاصلة في النتيجة <b>تحت الفاصلتين</b>.`)});
+await go(()=>{hlcol(j);if(!LZ[j])set('R'+j,RS[j],'ok');mark(j);say(colMsg(j))})}
+await wt('النتيجة 🏁');$('calc').innerHTML='';document.querySelectorAll('.cur').forEach(e=>e.classList.remove('cur'));
+const e=finalAS(0);calc([fd(x),sy(),fd(y),'='],nz(fmtRes()),`الآلة تعطي القيمة نفسها ✅`);
+say(`${E(fd(x)+' '+sy()+' '+fd(y)+' = '+nz(fmtRes()))}${/,\d*0$/.test(fmtRes())?' (حذفنا الأصفار الزائدة على يمين الفاصلة).':'.'} للتحقق: القيمة بالآلة الحاسبة ${E(e)}.`)}
+
+let EX={},ONALL=null;
+function arm(id,a,req,cls,show){const e=$(id);if(!e)return;EX[id]={a,req,cls,show:show===undefined?a[0]:show,done:0};
+e.innerHTML='<input inputmode="decimal" maxlength="2" autocomplete="off" aria-label="خانة">';const i=e.firstChild;
+i.onkeydown=ev=>{if(ev.key==='Enter'){const b=$('chk');b&&b.click()}};i.oninput=()=>{i.value=i.value.replace(/[٠-٩]/g,c=>c.charCodeAt(0)-1632).replace(/[۰-۹]/g,c=>c.charCodeAt(0)-1776).replace(/[٫،]/g,'.').replace(/[^\d.,]/g,'');i.classList.remove('no')}}
+const optz=id=>arm(id,['0'],0,'padz','0');
+function checkAll(){let ok=0,bad=0;
+for(const id in EX){const t=EX[id];if(t.done)continue;const e=$(id),i=e.firstChild;if(!i||!i.value||!i.value.trim())continue;const v=i.value.trim();
+if(t.a.includes(v)){t.done=1;e.textContent=t.show;e.className+=' '+t.cls+' lk';ok++}else{bad++;i.classList.add('no');shake(i)}}
+const left=Object.values(EX).filter(t=>t.req&&!t.done).length;
+if(bad)say(`❌ ${bad==1?'توجد خانة خاطئة':'توجد خانات خاطئة'} (باللون الأحمر). صحّحها ثم اضغط «تحقق ✔».`,1);
+else if(ok)say(`✅ ${ok==1?'الخانة صحيحة':'الخانات الصحيحة'}. أكمل باقي الخانات ثم اضغط «تحقق ✔».`);
+else say('اكتب رقمًا في إحدى الخانات ثم اضغط «تحقق ✔».');
+if(!bad&&!left&&ONALL){const f=ONALL;ONALL=null;f()}}
+function chBtn(){$('ctl').innerHTML='<div class="btns" style="margin:0"><button class="btn" id="chk">تحقق ✔</button></div>';$('chk').onclick=checkAll}
+function challengeAS(){lay();comp();grid();$('rows').firstChild.classList.add('chal');putNums(1);EX={};ONALL=doneAS;
+for(let j=0;j<L;j++){
+if(OP=='+'){const c=j+1<L&&CR[j+1]?1:0;arm('C'+j,c?['1']:['0'],c,'cy',c?'1':'0')}
+else{const b=CR[j]?1:0,bd=j+1<L&&CR[j+1]?1:0;arm('C'+j,b?['1','10']:['0'],b,'cy',b?'+10':'0');arm('D'+j,bd?['1']:['0'],bd,'cy',bd?'+1':'0')}
+LZ[j]?optz('R'+j):arm('R'+j,[String(RS[j])],1,'')}
+LEAD?arm('RL',['1'],1,''):optz('RL');if(mF>0)arm('Rk',[',','.'],1,'',',');
+chBtn();say(`اكتب الأرقام في الخانات المناسبة، بما في ذلك خانات الاحتفاظ ووضع الفاصلة، ثم اضغط «تحقق ✔» بعد كل رقم.`)}
+function doneAS(){document.querySelectorAll('.cur').forEach(e=>e.classList.remove('cur'));$('ctl').innerHTML='';const e=finalAS(1);say(`🌟 ممتاز! النتيجة ${E(nz(fmtRes()))}. القيمة بالآلة الحاسبة ${E(e)}.`)}
+
+/* ---------- الضرب (عموديًا) ---------- */
+const mbRow=(h,id)=>$('mb').insertAdjacentHTML('beforeend',`<div class="mr fade"${id?` id="${id}"`:''}>${h}</div>`);
+const lnA=()=>$('mb').insertAdjacentHTML('beforeend','<div class="ln"></div>');
+const zs=k=>k?`<span class="padz glow">${'0'.repeat(k)}</span>`:'';
+const zt=k=>k+(k==1?' صفرًا':' أصفارًا');
+function mbInit(X,Y){$('rows').insertAdjacentHTML('beforeend','<div class="mb" id="mb"></div>');mbRow(`<span class="cx">${X}</span>`);mbRow(`<span class="sg">×</span><span class="cm">${Y}</span>`);lnA()}
+function mgRow(p,W,s){let h=`<div class="gr${/^[CS]/.test(p)?' cr':''}"><span class="sg">${s||''}</span>`;for(let c=W-1;c>=0;c--){h+=`<span class="gc" id="${p}${c}"></span>`;if(c>0)h+=`<span class="gc sl" id="${p}s${c}"></span>`}return h+'</div>'}
+function fillF(x,y){[[x,'X','cx'],[y,'Y','cm']].forEach(([z,p,c])=>{const t=z.ip+z.fp;[...t].forEach((ch,i)=>set(p+(t.length-1-i),ch,c));if(z.fp.length)set(p+'s'+z.fp.length,',','cmm')})}
+const fdc=x=>x.ip+(x.fp?`<span class="cmm">,</span><span class="cdp">${x.fp}</span>`:'');
+const mcc=(P,d)=>{const s=String(P).padStart(d+1,'0');return d?s.slice(0,-d)+`<span class="cmm">,</span><span class="cdp">${s.slice(-d)}</span>`:s};
+const hlm=ids=>{document.querySelectorAll('.hl').forEach(e=>e.classList.remove('hl'));ids.forEach(i=>{const e=$(i);e&&e.classList.add('hl')})};
+const clrC=W=>{for(let c=0;c<=W;c++){const e=$('C'+c);if(e)e.textContent=''}};
+async function explainM(){
+const[x,y]=N,X=nat(x),Y=nat(y),d=x.fp.length+y.fp.length,P=X*Y,xs=String(X),ys=String(Y),lx=xs.length,ly=ys.length,lp=String(P).length,W=Math.max(lx+ly,d+1,(x.ip+x.fp).length,(y.ip+y.fp).length);
+const pr=[];for(let k=0;k<ly;k++){const m=+ys[ly-1-k];if(m)pr.push({k,m,v:X*m*10**k})}
+let f=1;const go=async fn=>{await wt(f?'ابدأ الشرح ⬅️':'التالي ⬅️');f=0;$('calc').innerHTML='';fn()};
+say(`الضرب العمودي في ثلاث مراحل: ① نتجاهل الفاصلة ونضرب العددين كأنهما طبيعيان، رقمًا برقم مع الاحتفاظ ② نعدّ الأرقام بعد الفاصلة في العددين معًا ③ نضع في الجداء فاصلة بحيث يكون عدد الأرقام بعدها مساويًا لهذا المجموع.`);
+await go(()=>{addRow(`<span>${fdc(x)}</span><span class="op">×</span><span>${fdc(y)}</span>`);say(`نريد حساب ${E(fd(x)+' × '+fd(y))}. الأرقام بعد الفاصلة بلون <b class="cdp">سماوي</b> والفاصلة <b class="cmm">حمراء</b>.`)});
+await go(()=>{$('rows').insertAdjacentHTML('beforeend',`<div class="grid" id="mg" style="--cols:${W*1.4+.5}">${mgRow('C',W)}${mgRow('X',W)}${mgRow('Y',W,'×')}<div class="ln"></div>${pr.map(p=>mgRow('P'+p.k+'_',W)).join('')}${pr.length>1?'<div class="ln"></div>'+mgRow('T',W):''}</div>`);
+fillF(N[0],N[1]);
+say(`نكتب العددين أحدهما تحت الآخر مع محاذاة الأرقام من اليمين. سنتجاهل الفاصلتين (الحمراوين) أثناء الضرب، ونعيدهما إلى الجداء في النهاية.`)});
+for(let k=0;k<ly;k++){const m=+ys[ly-1-k];
+if(!m){await go(()=>{hlm(['Y'+k]);say(`رقم ${NM[k]} من ${E(Y)} هو ${E(0)}، فجداؤه الجزئي معدوم ونتجاوزه.`)});continue}
+await go(()=>{hlm(['Y'+k]);clrC(W);for(let z=0;z<k;z++)set('P'+k+'_'+z,0,'cz glow');
+say(`نضرب كل رقم من ${E(X)} في الرقم ${E(m)} (رقم ${NM[k]} من ${E(Y)}، الخانة المضيئة)، ونبدأ من اليمين.`+(k?` أولًا نكتب ${zt(k)} على يمين الجداء الجزئي (بالأصفر) لأننا نضرب فعليًا في ${E(m*10**k)}.`:''))});
+let c=0;
+for(let i=0;i<lx;i++){const a=+xs[lx-1-i],t=a*m+c,u=t%10,cn=Math.floor(t/10),last=i==lx-1,c0=c;
+await go(()=>{hlm(['X'+i,'Y'+k]);set('P'+k+'_'+(i+k),u,'cp');if(cn)last?set('P'+k+'_'+(i+k+1),cn,'cp'):set('C'+(i+1),cn,'cy');
+say(E(a+' × '+m+(c0?' + '+c0:'')+' = '+t)+(last?`. هذا آخر رقم في ${E(X)}، فنكتب ${E(t)} كاملًا.`:cn?`. نكتب ${E(u)} ونحتفظ بـ ${E(cn)} (الرقم البرتقالي فوق العمود الموالي).`:`. نكتب ${E(u)}.`))});
+c=last?0:cn}}
+if(pr.length>1){
+await go(()=>{hlm([]);clrC(W);say(`نجمع الآن الجداءات الجزئية <b>عمودًا عمودًا</b> من اليمين مع الاحتفاظ.`)});
+const lp=String(P).length;let c=0;
+for(let col=0;col<lp;col++){const ds=pr.map(p=>{const q=String(p.v);return{k:p.k,v:col<q.length?+q[q.length-1-col]:null}}).filter(z=>z.v!==null),sum=ds.reduce((a,z)=>a+z.v,0)+c,u=sum%10,cn=Math.floor(sum/10),c0=c;
+await go(()=>{hlm(ds.map(z=>'P'+z.k+'_'+col));set('T'+col,u,'cs');if(cn)set('C'+(col+1),cn,'cy');
+say(E(ds.map(z=>z.v).join(' + ')+(c0?' + '+c0:'')+' = '+sum)+(cn?`. نكتب ${E(u)} ونحتفظ بـ ${E(cn)}.`:`. نكتب ${E(u)}.`))});
+c=cn}
+await go(()=>{hlm([]);say(`جداء العددين الطبيعيين: ${E(X+' × '+Y+' = '+P)}.`)})}
+else await go(()=>{hlm([]);say(`لدينا جداء جزئي وحيد، وهو جداء العددين الطبيعيين: ${E(X+' × '+Y+' = '+P)}.`)});
+await go(()=>{addRow(`<span>${x.fp.length} + ${y.fp.length} =</span><span class="glow">${d}</span>`);say(`عدد الأرقام بعد الفاصلة: في ${E(fd(x))} هو ${x.fp.length}، وفي ${E(fd(y))} هو ${y.fp.length}. المجموع ${E(x.fp.length+' + '+y.fp.length+' = '+d)}، إذن في الجداء ${d?d+(d==1?' رقم':' أرقام'):'لا أرقام'} بعد الفاصلة.`)});
+await go(()=>{const rr=pr.length>1?'T':'P'+pr[0].k+'_';for(let c=lp;c<=d;c++)set(rr+c,0,'cs padz glow');if(d)set(rr+'s'+d,',','cmm glow');addRow(`<span class="glow">${mcc(P,d)}</span>`);say(`نعدّ ${d} ${d==1?'رقمًا':'أرقامًا'} من اليمين في ${E(P)} ونضع الفاصلة قبلها${String(P).length<=d?' (ونضيف أصفارًا في البداية لأن الأرقام لا تكفي)':''}: ${E(mc(P,d))}.`)});
+await wt('النتيجة 🏁');const r=nz(mc(P,d));
+$('final').innerHTML=`<div class="res fade">${fd(x)} × ${fd(y)} = ${r}</div><div class="btns"><button class="btn alt" id="again">🔁 جرّب أعدادًا أخرى</button><button class="btn" id="tst">🎯 اختبرني بهذين العددين</button></div>`;
+$('again').onclick=home;$('tst').onclick=challenge;calc([fd(x),'×',fd(y),'='],r,`الآلة تعطي القيمة نفسها ✅`);
+say(`${E(fd(x)+' × '+fd(y)+' = '+r)}${r!=mc(P,d)?' (حذفنا الأصفار الزائدة على يمين الفاصلة).':'.'}`)}
+
+function mgInit(X,Y,pr,W){const xs=String(X),ys=String(Y),lx=xs.length,ly=ys.length,multi=pr.length>1;
+$('rows').insertAdjacentHTML('beforeend',`<div class="grid chal" id="mg" style="--cols:${W*1.4+.5}">${pr.map(p=>mgRow('C'+p.k+'_',W)).join('')}${mgRow('X',W)}${mgRow('Y',W,'×')}<div class="ln"></div>${multi?mgRow('S',W):''}${pr.map(p=>mgRow('P'+p.k+'_',W)).join('')}${multi?'<div class="ln"></div>'+mgRow('T',W):''}</div>`);
+fillF(N[0],N[1])}
+function challengeM(){
+const[x,y]=N,X=nat(x),Y=nat(y),P=X*Y,d=x.fp.length+y.fp.length,xs=String(X),ys=String(Y),lx=xs.length,ly=ys.length,lp=String(P).length,W=Math.max(lx+ly,d+1,(x.ip+x.fp).length,(y.ip+y.fp).length);
+const pr=[];for(let k=0;k<ly;k++){const m=+ys[ly-1-k];if(m)pr.push({k,m,v:X*m*10**k})}
+const dgt=(v,c)=>{const q=String(v);return c<q.length?q[q.length-1-c]:null};
+EX={};ONALL=doneM;addRow(`<span>${fdc(x)}</span><span class="op">×</span><span>${fdc(y)}</span>`);mgInit(X,Y,pr,W);
+pr.forEach(p=>{for(let c=1;c<lx;c++)optz('C'+p.k+'_'+c);let c=0;
+for(let i=0;i<lx;i++){const t=+xs[lx-1-i]*p.m+c,cn=Math.floor(t/10);c=cn;if(i<lx-1&&cn)arm('C'+p.k+'_'+(i+1),[String(cn)],1,'cy')}
+for(let col=0;col<W;col++){const id='P'+p.k+'_'+col,d=dgt(p.v,col);if(col<p.k)arm(id,['0','.',','],1,'cz','0');else if(d!==null)arm(id,[d],1,'cp');else optz(id)}});
+if(pr.length>1){for(let c=1;c<W;c++)optz('S'+c);for(let c=0;c<W;c++)optz('T'+c);let c=0;
+for(let col=0;col<lp;col++){const sum=pr.reduce((a,p)=>{const d=dgt(p.v,col);return a+(d===null?0:+d)},0)+c,u=sum%10,cn=Math.floor(sum/10);arm('T'+col,[String(u)],1,'cs');if(cn)arm('S'+(col+1),[String(cn)],1,'cy');c=cn}}
+const rr=pr.length>1?'T':'P'+pr[0].k+'_';for(let c=lp;c<=d;c++)arm(rr+c,['0'],1,'cs','0');
+for(let c=1;c<W;c++)arm(rr+'s'+c,c==d?[',','.']:[],c==d,'cmm',',');
+chBtn();say(`اكتب الأرقام في الخانات المناسبة، بما في ذلك الأصفار وخانات الاحتفاظ وفاصلة الناتج، ثم اضغط «تحقق ✔» بعد كل رقم.`)}
+function doneM(){const[x,y]=N,d=x.fp.length+y.fp.length,r=nz(mc(nat(x)*nat(y),d));$('ctl').innerHTML='';
+$('final').innerHTML=`<div class="res fade">${fd(x)} × ${fd(y)} = ${r}</div><div class="btns"><button class="btn alt" id="again">🔁 جرّب أعدادًا أخرى</button></div>`;$('again').onclick=home;
+say(`🌟 ممتاز! ${E(fd(x)+' × '+fd(y)+' = '+r)}.`)}
+
+/* ---------- الواجهة ---------- */
+function read(){let a=$('ia').value,b=$('ib').value;if(!a&&!b){rand();a=$('ia').value;b=$('ib').value}
+const x=parse(a),y=parse(b);if(!x||!y){$('hm').textContent='⚠️ أدخل عددين عشريين صحيحين (حتى 3 أرقام بعد الفاصلة).';shake($('ia'));return 0}
+OP=$('op').value;if(OP=='*'&&(!nat(x)||!nat(y))){$('hm').textContent='⚠️ في الضرب أدخل عددين غير معدومين.';return 0}N=[x,y];SW=0;if(OP=='-'&&sc(y)>sc(x)){N=[y,x];SW=1}$('hm').textContent='';return 1}
+const ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+function dec(m,k){let f='';for(let i=0;i<k;i++)f+=i==k-1?ri(1,9):ri(0,9);return ri(1,m)+','+f}
+function rand(){const o=$('op').value;if(o=='*'){$('ia').value=dec(9,1);$('ib').value=dec(9,ri(1,2))}else{$('ia').value=dec(99,ri(1,2));$('ib').value=dec(60,ri(1,2))}}
+['ia','ib'].forEach(id=>$(id).oninput=e=>e.target.value=e.target.value.replace(/[^\d.,]/g,'').slice(0,8));
+function start(m){SK=0;show('work');reset();$('lbl').textContent=m?'🎯 وضع التحدي':'📘 وضع الشرح';
+if(OP=='*')m?challengeM():explainM();else m?challengeAS():explainAS()}
+function challenge(){start(1)}
+function home(){show('home');$('ia').value=$('ib').value=''}
+$('bExp').onclick=()=>{if(read())start(0)};$('bCh').onclick=()=>{if(read())start(1)};
+$('bRn').onclick=()=>{rand();$('hm').textContent=''};$('bHome').onclick=()=>show('home');
+document.querySelectorAll('#ops button').forEach(b=>b.onclick=()=>{$('op').value=b.dataset.v;$('opS').textContent=b.textContent;document.querySelectorAll('#ops button').forEach(x=>x.classList.toggle('on',x===b))});
+</script>
+<button id="thb" class="thb" type="button"></button>
+<script>(function(){var b=document.getElementById("thb"),r=document.documentElement;function u(){var d=r.getAttribute("data-theme")==="dark";b.textContent=d?"☀️":"🌙";b.setAttribute("aria-label",d?"التبديل إلى المظهر الفاتح":"التبديل إلى المظهر الليلي");}b.onclick=function(){var d=r.getAttribute("data-theme")==="dark"?"light":"dark";r.setAttribute("data-theme",d);try{localStorage.setItem(TK,d);}catch(e){}u();};u();})();</script>
+</body>
+</html>
